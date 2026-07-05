@@ -25,9 +25,17 @@ Portfolio site for Justin Kuzmanich showcasing AI-built tools. One `index.html` 
 - Rows alternate image left / image right automatically (`.flip` on odd indices). Numbering (01, 02...) is automatic from array order.
 - Scroll reveal animations; `prefers-reduced-motion` fully supported. When screenshotting the page headless, use reduced motion or elements appear blank.
 
+## SEO and AEO
+
+- Canonical URL is `https://kuzmanich.com/` (set in the canonical link, OG tags, JSON-LD, robots.txt, and sitemap.xml). The GitHub Pages staging copy canonicalizes to it, which keeps staging out of search results.
+- The project rows are baked into `index.html` as static markup between the `PROJECTS:STATIC` comment markers inside `#rows`, so crawlers that do not run JavaScript (GPTBot, ClaudeBot, PerplexityBot) can read the portfolio. The browser JS re-renders the same rows from the `PROJECTS` array at runtime, so the visible site never depends on the static block.
+- **After any edit to the `PROJECTS` array, run `node scripts/render-projects.mjs`** to regenerate the static block. If you forget, the site still looks right; only the crawler-visible copy goes stale.
+- JSON-LD in the head: WebSite, Person (Justin), and an ItemList of the six projects. Keep its descriptions consistent with the on-page copy and the CheckMate honesty framing (rule 3 above). Update it when projects change.
+- Social card is `images/og-card.jpg` (1200x630, hero shot on paper). Favicon is `images/favicon.svg` plus `images/apple-touch-icon.png` (forest K with clay dot).
+
 ## Editing projects
 
-Everything lives in the `PROJECTS` array near the bottom of `index.html`. One object per project, rendered in array order. Fields:
+Everything lives in the `PROJECTS` array near the bottom of `index.html`. One object per project, rendered in array order. After editing, regenerate the static crawler copy: `node scripts/render-projects.mjs`. Fields:
 
 - `title`, `type` (e.g. "CRM \u00B7 Internal tool" - the dot is \u00B7), `status` (live | demo | proto | acq), `mono` (2-3 letters for the placeholder panel)
 - `challenge` and `build`: the two copy blocks. `build` may contain `<b>` tags. Keep each roughly 20-45 words. Challenge states the real business problem; build states what was made. No dashes.
