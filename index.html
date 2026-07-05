@@ -76,8 +76,24 @@
 
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
   .reveal.in{opacity:1;transform:none}
-  /* tool tags ripple in after their row reveals */
-  .reveal .tools li{opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:calc(.25s + var(--i,0)*.06s)}
+
+  /* project rows cascade piece by piece instead of fading as one block:
+     the screenshot slides in from its own side, then the text stack follows */
+  .row.reveal{opacity:1;transform:none;transition:none}
+  .row .visual{opacity:0;transform:translateX(-22px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:.05s}
+  .row.flip .visual{transform:translateX(22px)}
+  .row.in .visual{opacity:1;transform:none}
+  .row .body>*{opacity:0;transform:translateY(12px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+  .row.in .body>*{opacity:1;transform:none}
+  .row .body>*:nth-child(1){transition-delay:.08s}
+  .row .body>*:nth-child(2){transition-delay:.15s}
+  .row .body>*:nth-child(3){transition-delay:.22s}
+  .row .body>*:nth-child(4){transition-delay:.3s}
+  .row .body>*:nth-child(5){transition-delay:.38s}
+  .row .body>*:nth-child(6){transition-delay:.46s}
+  .row .body>*:nth-child(7){transition-delay:.54s}
+  /* tool tags ripple in at the tail of their row's cascade */
+  .reveal .tools li{opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:calc(.52s + var(--i,0)*.06s)}
   .reveal.in .tools li{opacity:1;transform:none}
 
   /* projects */
@@ -174,6 +190,7 @@
     *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
     .reveal{opacity:1;transform:none}
     .reveal .tools li{opacity:1;transform:none}
+    .row .visual,.row .body>*{opacity:1;transform:none}
     .hero h1 .mark path,footer h2 .mark path{stroke-dashoffset:0}
     .visual .panel:hover{transform:none}
   }
