@@ -14,7 +14,7 @@ Portfolio site for Justin Kuzmanich showcasing AI-built tools. One `index.html` 
 2. **Studio voice.** "We", not "I". Section labels are "What we built". The one exception: CheckMate copy names Justin directly because it predates the studio.
 3. **CheckMate honesty framing.** Justin is co-founder of the venture, NOT co-inventor of the patent. Fleming Trane is the sole inventor of record on US 7,370,794 B2. Never write "patent holder" or "co-inventor". This matches his resumes and application materials and must stay consistent because employers have seen those materials.
 4. **Malugani's Tire Center** (if ever added): established 1948, "78 years in business". Always 78.
-5. Headline is "Practical tools to remove the friction in your business." with the hand-drawn underline on "friction". Statement, no question mark.
+5. Headline is "Tools for removing friction in your business." with the hand-drawn underline on "friction". Statement, no question mark.
 
 ## Design system
 
