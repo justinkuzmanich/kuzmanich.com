@@ -1,0 +1,31 @@
+# Netlify configuration for kuzmanich.com
+# Production deploys come from the "live" branch only.
+# The "dev" branch is staging (GitHub Pages) and must not build on Netlify.
+
+[build]
+  publish = "."
+  command = ""
+  # Skip any build that is not on the live branch (exit 0 = skip build).
+  # Belt and braces alongside the UI setting: production branch = live,
+  # branch deploys and deploy previews off.
+  ignore = "test \"$BRANCH\" != \"live\""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# Always revalidate the page itself so visitors get new deploys immediately.
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "max-age=0, must-revalidate"
