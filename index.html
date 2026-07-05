@@ -49,6 +49,10 @@
   .top nav{display:flex;align-items:center;gap:24px}
   .top nav a{font-size:14px;color:#BFC8B5;transition:color .2s}
   .top nav a:hover{color:#fff}
+  .top nav a:not(.contact){padding-bottom:3px;background-image:linear-gradient(var(--clay),var(--clay));background-size:0% 2px;background-repeat:no-repeat;background-position:0 100%;transition:color .2s,background-size .3s var(--ease)}
+  .top nav a:not(.contact):hover{background-size:100% 2px}
+  .brand .dot{display:inline-block;transition:transform .3s var(--ease)}
+  .brand:hover .dot{transform:translateY(-3px)}
   .top .contact{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--forest);background:var(--paper);padding:9px 16px;border-radius:8px;letter-spacing:.02em;transition:transform .2s var(--ease),background .2s,color .2s}
   .top .contact:hover{transform:translateY(-1px);background:var(--clay);color:#fff}
 
@@ -59,7 +63,7 @@
   .hero h1{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(2.3rem,4.8vw,4.05rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:26px}
   .hero h1 .mark{position:relative;white-space:nowrap}
   .hero h1 .mark svg{position:absolute;left:-2%;bottom:-.18em;width:104%;height:.5em;overflow:visible}
-  .hero h1 .mark path{fill:none;stroke:var(--clay);stroke-width:7;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:640;animation:draw 1.1s var(--ease) .7s forwards}
+  .hero h1 .mark path{fill:none;stroke:var(--clay);stroke-width:7;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:640;animation:draw 1.1s var(--ease) 1s forwards}
   @keyframes draw{to{stroke-dashoffset:0}}
   .hero .lede{font-size:clamp(1.05rem,1.5vw,1.24rem);color:var(--ink-soft);line-height:1.58}
   .hero .lede b{color:var(--ink);font-weight:600}
@@ -70,8 +74,11 @@
   .hero .mi .k{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
   .hero .mi .v{font-size:14.5px;color:var(--ink-soft);line-height:1.45}
 
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
   .reveal.in{opacity:1;transform:none}
+  /* tool tags ripple in after their row reveals */
+  .reveal .tools li{opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:calc(.25s + var(--i,0)*.06s)}
+  .reveal.in .tools li{opacity:1;transform:none}
 
   /* projects */
   .projects{padding:30px 0 30px}
@@ -81,7 +88,8 @@
   .row.flip .body{order:1}
 
   .visual{position:relative}
-  .panel{position:relative;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 26px 50px -34px rgba(36,55,43,.5)}
+  .panel{position:relative;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 26px 50px -34px rgba(36,55,43,.5);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+  .visual .panel:hover{transform:translateY(-5px);box-shadow:0 34px 60px -32px rgba(36,55,43,.55)}
   .panel img{width:100%;height:auto;display:block}
   /* placeholder variant keeps a fixed frame */
   .panel.ph{aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 120% at 30% 20%, #FBF8F1, #ECE6D8)}
@@ -93,7 +101,9 @@
   .body .head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
   .body .idx{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--clay);letter-spacing:.06em}
   .body .status{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
-  .status.live{color:#2c5238;background:rgba(110,138,110,.22);border:1px solid rgba(62,92,70,.35)}
+  .status.live{color:#2c5238;background:rgba(110,138,110,.22);border:1px solid rgba(62,92,70,.35);display:inline-flex;align-items:center;gap:6px}
+  .status.live::before{content:"";width:6px;height:6px;border-radius:50%;background:#3E5C46;animation:ping 2.6s ease-in-out infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(62,92,70,.35)}70%{box-shadow:0 0 0 5px rgba(62,92,70,0)}100%{box-shadow:0 0 0 0 rgba(62,92,70,0)}}
   .status.demo{color:#9a5526;background:rgba(189,107,62,.16);border:1px solid rgba(189,107,62,.35)}
   .status.proto{color:#3a5240;background:rgba(36,55,43,.1);border:1px solid rgba(36,55,43,.25)}
   .status.acq{color:#F1ECE1;background:#24372B;border:1px solid #24372B}
@@ -121,6 +131,11 @@
   footer .eyebrow{color:var(--sage-soft)}
   footer h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.06;margin:14px 0 18px;letter-spacing:-.01em}
   footer h2 a{color:#fff;border-bottom:2px solid var(--clay)}
+  /* footer echoes the hero's hand-drawn underline, drawn on scroll into view */
+  footer h2 .mark{position:relative;white-space:nowrap}
+  footer h2 .mark svg{position:absolute;left:-2%;bottom:-.18em;width:104%;height:.5em;overflow:visible}
+  footer h2 .mark path{fill:none;stroke:var(--clay);stroke-width:7;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:640}
+  .ft-left.in h2 .mark path{animation:draw 1s var(--ease) .4s forwards}
   footer .who{max-width:520px;color:#c4cabb;font-size:.98rem}
   footer .who b{color:#fff;font-weight:600}
   footer .sig{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.1em;color:#9aa691;text-align:right;line-height:1.9}
@@ -158,7 +173,9 @@
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
     .reveal{opacity:1;transform:none}
-    .hero h1 .mark path{stroke-dashoffset:0}
+    .reveal .tools li{opacity:1;transform:none}
+    .hero h1 .mark path,footer h2 .mark path{stroke-dashoffset:0}
+    .visual .panel:hover{transform:none}
   }
 </style>
 </head>
@@ -180,17 +197,17 @@
     <div class="wrap hero-grid">
       <div class="hero-text">
         <span class="eyebrow reveal">Designed by hand · built with AI tools</span>
-        <h1 class="reveal">Practical tools for the
+        <h1 class="reveal" style="--d:.1s">Practical tools for the
           <span class="mark">friction<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 15 C 60 6, 150 6, 210 11 C 250 14, 280 12, 296 9"/></svg></span>
           in your business.</h1>
-        <p class="lede reveal">We pair real creativity with AI tools to design and build software that solves <b>actual business workflows</b>, for our own studio and our clients. Six of them, below.</p>
+        <p class="lede reveal" style="--d:.22s">We pair real creativity with AI tools to design and build software that solves <b>actual business workflows</b>, for our own studio and our clients. Six of them, below.</p>
       </div>
-      <div class="hero-art reveal">
+      <div class="hero-art reveal" style="--d:.34s">
         <img src="images/hero-pipeline.webp" alt="Blu Sky Pipeline, the studio deal board, live">
       </div>
     </div>
     <div class="wrap">
-      <div class="meta-row reveal">
+      <div class="meta-row reveal" style="--d:.46s">
         <div class="mi"><div class="k">The approach</div><div class="v">A real problem first. AI as the tool, not the point.</div></div>
         <div class="mi"><div class="k">Who's building</div><div class="v">Justin Kuzmanich of Blu Sky Films, Marin County.</div></div>
         <div class="mi"><div class="k">What's here</div><div class="v">Live tools, working demos, and one honest concept.</div></div>
@@ -205,12 +222,12 @@
 
 <footer id="about">
   <div class="wrap ft-grid">
-    <div class="ft-left">
+    <div class="ft-left reveal">
       <span class="eyebrow">Is there something slowing down your business?</span>
-      <h2>Let's build something that fixes it.</h2>
+      <h2>Let's build something that <span class="mark">fixes it<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 15 C 60 6, 150 6, 210 11 C 250 14, 280 12, 296 9"/></svg></span>.</h2>
       <p class="who">Justin Kuzmanich runs <b>Blu Sky Films</b>, a video and digital studio in Marin County. We build AI-assisted tools like these for studios, small businesses, and real estate. Human-led, AI-built, aimed squarely at the work that actually needs doing.</p>
     </div>
-    <form class="ft-form" id="contact" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+    <form class="ft-form reveal" style="--d:.15s" id="contact" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <label for="cf-name">Name</label>
@@ -292,7 +309,7 @@ function rowHTML(p,i){
   const visual=(p.image && p.image.indexOf('__IMG_')!==0)
     ? `<div class="panel"><img src="${p.image}" alt="${esc(p.title)} screenshot" loading="lazy"></div>`
     : `<div class="panel ph"><span class="mono-mark">${esc(p.mono||'\u00B7')}</span><span class="hint">screenshot</span></div>`;
-  const tools=(p.tools||[]).map(t=>`<li>${esc(t)}</li>`).join('');
+  const tools=(p.tools||[]).map((t,ti)=>`<li style="--i:${ti}">${esc(t)}</li>`).join('');
   let acts='';
   if(p.live) acts+=`<a class="btn go" href="${esc(p.live)}" target="_blank" rel="noopener">${esc(p.label||'Open it')} <span class="arr">\u2197</span></a>`;
   if(p.repo) acts+=`<a class="btn ghost" href="${esc(p.repo)}" target="_blank" rel="noopener">View code</a>`;
