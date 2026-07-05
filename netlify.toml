@@ -19,6 +19,13 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
+# Screenshots are content-stable: replace an image by adding a new filename,
+# never by overwriting, so the long cache below stays safe.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Always revalidate the page itself so visitors get new deploys immediately.
 [[headers]]
   for = "/"

@@ -1,6 +1,6 @@
 # kuzmanich.com
 
-Portfolio site for Justin Kuzmanich showcasing AI-built tools. One self-contained file: `index.html`. All images are baked in as base64 data URIs. No build step, no dependencies, no assets folder. Deploys as-is.
+Portfolio site for Justin Kuzmanich showcasing AI-built tools. One `index.html` plus an `images/` folder of optimized WebP screenshots. No build step, no dependencies. Deploys as-is. Image paths are relative (`images/name.webp`, no leading slash) so the site works both at the domain root on Netlify and under the `/kuzmanich.com/` subpath on GitHub Pages staging. When replacing an image, give the file a new name: Netlify serves `/images/` with a one-year immutable cache, so a changed file behind the same name stays stale for repeat visitors.
 
 ## Deploy
 
@@ -32,7 +32,7 @@ Everything lives in the `PROJECTS` array near the bottom of `index.html`. One ob
 - `title`, `type` (e.g. "CRM \u00B7 Internal tool" - the dot is \u00B7), `status` (live | demo | proto | acq), `mono` (2-3 letters for the placeholder panel)
 - `challenge` and `build`: the two copy blocks. `build` may contain `<b>` tags. Keep each roughly 20-45 words. Challenge states the real business problem; build states what was made. No dashes.
 - `tools`: array of short tag strings
-- `image`: base64 data URI, or `""` for the styled placeholder panel
+- `image`: relative path like `images/name.webp`, or `""` for the styled placeholder panel
 - `live`: URL for the primary button, `""` shows "Link pending"
 - `label`: optional button text override (CheckMate uses "View patent")
 - `repo`: GitHub URL or `""`
@@ -47,7 +47,7 @@ All screenshots are pre-composited before embedding, on a `#FBF8F1` cream canvas
 - **Mobile apps** (TableOps): device screenshots side by side as a paired phone shot.
 - **Desktop apps / photos** (Resolve, CheckMate device): no browser chrome, just the rounded panel with shadow. Photos get ~1.5% edge trim to remove video-player corner artifacts.
 
-To add a shot: composite with PIL following the above, export JPEG quality ~86, base64 encode, set as the project's `image` value. Hero image (Pipeline crop, 1660x712 source crop) uses the same browser treatment on the `#F1ECE1` paper color so it blends with the hero background.
+To add a shot: composite with PIL following the above, export as WebP quality ~82 (method 6) into `images/` with a kebab-case name matching the project, set the relative path as the project's `image` value. Hero image (Pipeline crop, 1660x712 source crop) uses the same browser treatment on the `#F1ECE1` paper color so it blends with the hero background and lives at `images/hero-pipeline.webp`.
 
 ## Contact form (Netlify Forms)
 
