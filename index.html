@@ -243,6 +243,9 @@
     .row.flip .visual{order:0}
     .row.flip .body{order:0}
     footer .wrap{flex-direction:column;align-items:flex-start}
+    /* in the column layout the row flex-basis would become a phantom height */
+    .ft-left,.ft-form{flex-basis:auto}
+    footer .wrap.ft-grid{gap:32px}
     footer .sig{text-align:left}
   }
   @media(prefers-reduced-motion:reduce){
