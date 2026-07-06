@@ -45,7 +45,9 @@ Everything lives in the `PROJECTS` array near the bottom of `index.html`. One ob
 - `label`: optional button text override (CheckMate uses "View patent")
 - `repo`: GitHub URL or `""`
 
-Current order: CheckMate (01, Acquired, opens the page as the origin story), TableOps, Blu Sky Pipeline, Scoop Alert, AI B-Roll Editor, Listing Website Builder. Hero copy says "Six of them, below." Update that count if projects are added or removed.
+Current order: CheckMate (01, Acquired, opens the page as the origin story), TableOps, Blu Sky Pipeline, Scoop Alert, AI B-Roll Editor, Listing Website Builder, $ANSEM Dashboard. Hero copy says "Seven of them, below." Update that count if projects are added or removed.
+
+$ANSEM Dashboard is a live market tracker for a Solana meme coin, a different category from the other six business tools. Copy is deliberately written as a utility (price and holder tracking, a private P&L calculator, a news digest for newcomers) with no buy link, price hype, or promotional language, since this portfolio is read by potential employers and clients. Keep that restraint if this entry is ever edited.
 
 ## Product shot treatment
 
