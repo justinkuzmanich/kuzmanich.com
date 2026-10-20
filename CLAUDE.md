@@ -38,6 +38,7 @@ Portfolio site for Justin Kuzmanich showcasing AI-built tools. One `index.html` 
 Everything lives in the `PROJECTS` array near the bottom of `index.html`. One object per project, rendered in array order. After editing, regenerate the static crawler copy: `node scripts/render-projects.mjs`. Fields:
 
 - `title`, `type` (e.g. "CRM \u00B7 Internal tool" - the dot is \u00B7), `status` (live | demo | proto | acq), `mono` (2-3 letters for the placeholder panel)
+- `tagline`: one short sentence under the title, before "The challenge". Gives the overall concept at a glance before the reader gets to the in-depth paragraphs. Keep it to roughly one line (under ~15 words). No dashes.
 - `challenge` and `build`: the two copy blocks. `build` may contain `<b>` tags. Keep each roughly 20-45 words. Challenge states the real business problem; build states what was made. No dashes.
 - `tools`: array of short tag strings
 - `image`: relative path like `images/name.webp`, or `""` for the styled placeholder panel

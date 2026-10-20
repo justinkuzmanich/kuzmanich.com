@@ -187,7 +187,8 @@
   .status.proto{color:#3a5240;background:rgba(36,55,43,.1);border:1px solid rgba(36,55,43,.25)}
   .status.acq{color:#F1ECE1;background:#24372B;border:1px solid #24372B}
   .body .type{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
-  .body h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:20px}
+  .body h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:10px}
+  .body .tagline{font-size:1.08rem;color:var(--sage);font-weight:500;line-height:1.5;margin-bottom:22px}
   .block{margin-bottom:16px}
   .block .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);display:block;margin-bottom:4px}
   .block p{color:var(--ink-soft);font-size:1.02rem;line-height:1.56}
@@ -309,6 +310,7 @@
       <div class="head"><span class="idx">01</span><span class="status live">Live</span></div>
       <div class="type">Marketing · Campaign case study</div>
       <h2>Malugani's Tire Shop</h2>
+      <p class="tagline">A real-time analytics dashboard that tracks a tire shop's ad campaign as it runs.</p>
       <div class="block"><span class="lbl">The challenge</span><p>Malugani's Tire Shop was running paid ads for a winter rebate promotion, but no one could say whether the campaign was working without logging into Facebook Ads Manager and Google Analytics separately and doing the math by hand.</p></div>
       <div class="block"><span class="lbl">What we built</span><p>A winter rebate landing page for the campaign, paired with a live dashboard that pulls ad spend and clicks from <b>Facebook Ads Manager</b> and calls and leads from <b>Google Analytics</b>, synced through Google Sheets and refreshed daily, all on one page instead of two logins.</p></div>
       <ul class="tools"><li style="--i:0">Landing page</li><li style="--i:1">Facebook Ads Manager</li><li style="--i:2">Google Analytics (GA4)</li></ul>
@@ -320,6 +322,7 @@
       <div class="head"><span class="idx">02</span><span class="status acq">Acquired</span></div>
       <div class="type">Payments · The origin story</div>
       <h2>CheckMate</h2>
+      <p class="tagline">A patented device that lets restaurant diners pay right at the table.</p>
       <div class="block"><span class="lbl">The challenge</span><p>Long before AI tools, paying at a restaurant table was pure friction: split checks, server handoffs, slow card processing.</p></div>
       <div class="block"><span class="lbl">What we built</span><p>Justin co-founded the venture that fixed it with inventor Fleming Trane: a <b>patented hardware-and-software pay-at-the-table device</b> (US 7,370,794 B2), acquired into <b>TableSafe, Inc.</b> in 2012 and now serving 170+ restaurant groups. Workflow first, then the technology. The same approach behind every tool below.</p></div>
       <ul class="tools"><li style="--i:0">Hardware + software</li><li style="--i:1">US Patent 7,370,794 B2</li><li style="--i:2">Acquired · TableSafe 2012</li></ul>
@@ -331,6 +334,7 @@
       <div class="head"><span class="idx">03</span><span class="status demo">Demo</span></div>
       <div class="type">Operations · Knowledge transfer</div>
       <h2>TableOps</h2>
+      <p class="tagline">A video-based training tool that captures how your best staff actually work.</p>
       <div class="block"><span class="lbl">The challenge</span><p>When a restaurant trains new staff, the know-how lives in a few people's heads. New hires sink or swim, and good practices drift.</p></div>
       <div class="block"><span class="lbl">What we built</span><p>Front-line staff capture a <b>“play”</b>, a short video plus step notes, and a manager approves it before it goes live. Organized by station, bilingual EN/ES, so a new hire learns the house standard from the people who set it. In demo with a long-standing client.</p></div>
       <ul class="tools"><li style="--i:0">Single-file HTML</li><li style="--i:1">Bilingual EN/ES</li><li style="--i:2">Approval workflow</li></ul>
@@ -342,6 +346,7 @@
       <div class="head"><span class="idx">04</span><span class="status live">Live</span></div>
       <div class="type">CRM · Internal tool</div>
       <h2>Blu Sky Pipeline</h2>
+      <p class="tagline">A kanban CRM that tracks every studio deal from lead to invoice.</p>
       <div class="block"><span class="lbl">The challenge</span><p>Leads, deals, and invoices lived in email, sticky notes, and Square. Nothing talked to anything, and things slipped.</p></div>
       <div class="block"><span class="lbl">What we built</span><p>A kanban board for the whole studio: drag every deal from Prospect to Closed, tag it by service, and watch pipeline value and win rate update live. <b>Square invoicing is wired in</b>, so billing happens where the work already lives.</p></div>
       <ul class="tools"><li style="--i:0">React 18</li><li style="--i:1">Vite</li><li style="--i:2">Supabase</li><li style="--i:3">Square API</li></ul>
@@ -353,6 +358,7 @@
       <div class="head"><span class="idx">05</span><span class="status live">Live</span></div>
       <div class="type">Consumer · Price tracking</div>
       <h2>Scoop Alert</h2>
+      <p class="tagline">A daily price tracker that emails you the moment ice cream gets cheap.</p>
       <div class="block"><span class="lbl">The challenge</span><p>Good ice cream isn't cheap and prices move. You never quite know when your spot is actually worth the trip.</p></div>
       <div class="block"><span class="lbl">What we built</span><p>Checks the Mill Valley Safeway every day and <b>emails you the moment Häagen-Dazs or Ben & Jerry's drops to a member price</b>. A small, fun one, and proof the same scrape-and-alert pattern works for anything worth watching.</p></div>
       <ul class="tools"><li style="--i:0">Web scraping</li><li style="--i:1">Email alerts</li><li style="--i:2">Daily checks</li></ul>
@@ -364,6 +370,7 @@
       <div class="head"><span class="idx">06</span><span class="status proto">Concept</span></div>
       <div class="type">Video · Editing automation</div>
       <h2>AI B-Roll Editor</h2>
+      <p class="tagline">An AI editor that turns raw property footage into a polished rough cut.</p>
       <div class="block"><span class="lbl">The challenge</span><p>Cutting hours of property b-roll into a tight, musical 90 seconds is slow, repetitive work, and the least creative part of the edit.</p></div>
       <div class="block"><span class="lbl">What we built</span><p>An AI-assisted editor that picks and assembles the strongest b-roll into a rough cut, then exports <b>FCPXML straight into DaVinci Resolve</b>, so the editor finishes the piece instead of starting from zero.</p></div>
       <ul class="tools"><li style="--i:0">DaVinci Resolve</li><li style="--i:1">FCPXML</li><li style="--i:2">AI vision</li></ul>
@@ -375,6 +382,7 @@
       <div class="head"><span class="idx">07</span><span class="status demo">Demo</span></div>
       <div class="type">Real estate · Web tool</div>
       <h2>Listing Website Builder</h2>
+      <p class="tagline">A tool that turns a listing film and photo set into its own microsite.</p>
       <div class="block"><span class="lbl">The challenge</span><p>Every luxury listing deserves its own fast, beautiful website, but hand-building one per property, for every agent, doesn't scale.</p></div>
       <div class="block"><span class="lbl">What we built</span><p>Turns a Blu Sky listing film and photo set into a <b>polished single-property microsite</b>: hero video, lightbox gallery, the details, mobile-first, in a fraction of the usual time.</p></div>
       <ul class="tools"><li style="--i:0">HTML / CSS</li><li style="--i:1">Netlify</li><li style="--i:2">Templating</li></ul>
@@ -386,6 +394,7 @@
       <div class="head"><span class="idx">08</span><span class="status live">Live</span></div>
       <div class="type">Crypto · Market dashboard</div>
       <h2>$ANSEM Dashboard</h2>
+      <p class="tagline">A real-time market dashboard for tracking and understanding the $ANSEM token.</p>
       <div class="block"><span class="lbl">The challenge</span><p>New $ANSEM holders had no simple way to check their own position or read the market without opening a full trading terminal, and newcomers to Solana had no plain language place to start.</p></div>
       <div class="block"><span class="lbl">What we built</span><p>A live dashboard that tracks price, market cap, and holder data in real time, a private profit and loss calculator for your own position, and a daily AI written news digest, so anyone new to $ANSEM or Solana can get oriented on one page.</p></div>
       <ul class="tools"><li style="--i:0">Real time price feed</li><li style="--i:1">P&L calculator</li><li style="--i:2">AI news digest</li></ul>
@@ -430,6 +439,7 @@
 const PROJECTS = [
   {
     title:"Malugani's Tire Shop", type:"Marketing \u00B7 Campaign case study", status:"live", mono:"MTS",
+    tagline:"A real-time analytics dashboard that tracks a tire shop's ad campaign as it runs.",
     challenge:"Malugani's Tire Shop was running paid ads for a winter rebate promotion, but no one could say whether the campaign was working without logging into Facebook Ads Manager and Google Analytics separately and doing the math by hand.",
     build:"A winter rebate landing page for the campaign, paired with a live dashboard that pulls ad spend and clicks from <b>Facebook Ads Manager</b> and calls and leads from <b>Google Analytics</b>, synced through Google Sheets and refreshed daily, all on one page instead of two logins.",
     tools:["Landing page","Facebook Ads Manager","Google Analytics (GA4)"],
@@ -438,6 +448,7 @@ const PROJECTS = [
   },
   {
     title:"CheckMate", type:"Payments \u00B7 The origin story", status:"acq", mono:"CM",
+    tagline:"A patented device that lets restaurant diners pay right at the table.",
     challenge:"Long before AI tools, paying at a restaurant table was pure friction: split checks, server handoffs, slow card processing.",
     build:"Justin co-founded the venture that fixed it with inventor Fleming Trane: a <b>patented hardware-and-software pay-at-the-table device</b> (US 7,370,794 B2), acquired into <b>TableSafe, Inc.</b> in 2012 and now serving 170+ restaurant groups. Workflow first, then the technology. The same approach behind every tool below.",
     tools:["Hardware + software","US Patent 7,370,794 B2","Acquired \u00B7 TableSafe 2012"],
@@ -445,6 +456,7 @@ const PROJECTS = [
   },
   {
     title:"TableOps", type:"Operations \u00B7 Knowledge transfer", status:"demo", mono:"TO",
+    tagline:"A video-based training tool that captures how your best staff actually work.",
     challenge:"When a restaurant trains new staff, the know-how lives in a few people's heads. New hires sink or swim, and good practices drift.",
     build:"Front-line staff capture a <b>\u201Cplay\u201D</b>, a short video plus step notes, and a manager approves it before it goes live. Organized by station, bilingual EN/ES, so a new hire learns the house standard from the people who set it. In demo with a long-standing client.",
     tools:["Single-file HTML","Bilingual EN/ES","Approval workflow"],
@@ -452,6 +464,7 @@ const PROJECTS = [
   },
   {
     title:"Blu Sky Pipeline", type:"CRM \u00B7 Internal tool", status:"live", mono:"BSP",
+    tagline:"A kanban CRM that tracks every studio deal from lead to invoice.",
     challenge:"Leads, deals, and invoices lived in email, sticky notes, and Square. Nothing talked to anything, and things slipped.",
     build:"A kanban board for the whole studio: drag every deal from Prospect to Closed, tag it by service, and watch pipeline value and win rate update live. <b>Square invoicing is wired in</b>, so billing happens where the work already lives.",
     tools:["React 18","Vite","Supabase","Square API"],
@@ -460,6 +473,7 @@ const PROJECTS = [
   },
   {
     title:"Scoop Alert", type:"Consumer \u00B7 Price tracking", status:"live", mono:"SA",
+    tagline:"A daily price tracker that emails you the moment ice cream gets cheap.",
     challenge:"Good ice cream isn't cheap and prices move. You never quite know when your spot is actually worth the trip.",
     build:"Checks the Mill Valley Safeway every day and <b>emails you the moment H\u00E4agen-Dazs or Ben & Jerry's drops to a member price</b>. A small, fun one, and proof the same scrape-and-alert pattern works for anything worth watching.",
     tools:["Web scraping","Email alerts","Daily checks"],
@@ -467,6 +481,7 @@ const PROJECTS = [
   },
   {
     title:"AI B-Roll Editor", type:"Video \u00B7 Editing automation", status:"proto", mono:"BR",
+    tagline:"An AI editor that turns raw property footage into a polished rough cut.",
     challenge:"Cutting hours of property b-roll into a tight, musical 90 seconds is slow, repetitive work, and the least creative part of the edit.",
     build:"An AI-assisted editor that picks and assembles the strongest b-roll into a rough cut, then exports <b>FCPXML straight into DaVinci Resolve</b>, so the editor finishes the piece instead of starting from zero.",
     tools:["DaVinci Resolve","FCPXML","AI vision"],
@@ -474,6 +489,7 @@ const PROJECTS = [
   },
   {
     title:"Listing Website Builder", type:"Real estate \u00B7 Web tool", status:"demo", mono:"LWB",
+    tagline:"A tool that turns a listing film and photo set into its own microsite.",
     challenge:"Every luxury listing deserves its own fast, beautiful website, but hand-building one per property, for every agent, doesn't scale.",
     build:"Turns a Blu Sky listing film and photo set into a <b>polished single-property microsite</b>: hero video, lightbox gallery, the details, mobile-first, in a fraction of the usual time.",
     tools:["HTML / CSS","Netlify","Templating"],
@@ -481,6 +497,7 @@ const PROJECTS = [
   },
   {
     title:"$ANSEM Dashboard", type:"Crypto · Market dashboard", status:"live", mono:"AD",
+    tagline:"A real-time market dashboard for tracking and understanding the $ANSEM token.",
     challenge:"New $ANSEM holders had no simple way to check their own position or read the market without opening a full trading terminal, and newcomers to Solana had no plain language place to start.",
     build:"A live dashboard that tracks price, market cap, and holder data in real time, a private profit and loss calculator for your own position, and a daily AI written news digest, so anyone new to $ANSEM or Solana can get oriented on one page.",
     tools:["Real time price feed","P&L calculator","AI news digest"],
@@ -511,6 +528,7 @@ function rowHTML(p,i){
       <div class="head"><span class="idx">${num}</span><span class="status ${st.c}">${st.t}</span></div>
       <div class="type">${esc(p.type)}</div>
       <h2>${esc(p.title)}</h2>
+      ${p.tagline ? `<p class="tagline">${esc(p.tagline)}</p>` : ''}
       <div class="block"><span class="lbl">The challenge</span><p>${p.challenge}</p></div>
       <div class="block"><span class="lbl">What we built</span><p>${p.build}</p></div>
       <ul class="tools">${tools}</ul>
