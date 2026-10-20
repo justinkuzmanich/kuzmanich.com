@@ -13,7 +13,7 @@ Portfolio site for Justin Kuzmanich showcasing AI-built tools. One `index.html` 
 1. **No em or en dashes anywhere.** Not in copy, titles, meta tags, alt text, or comments. Rewrite with commas, colons, or periods. Hyphens in compound words are fine (pay-at-the-table, mobile-first, AI-assisted).
 2. **Studio voice.** "We", not "I". Section labels are "What we built". The one exception: CheckMate copy names Justin directly because it predates the studio.
 3. **CheckMate honesty framing.** Justin is co-founder of the venture, NOT co-inventor of the patent. Fleming Trane is the sole inventor of record on US 7,370,794 B2. Never write "patent holder" or "co-inventor". This matches his resumes and application materials and must stay consistent because employers have seen those materials.
-4. **Malugani's Tire Center** (if ever added): established 1948, "78 years in business". Always 78.
+4. **Malugani's Tire Shop** (added as project 01): established 1948, "78 years" in Mill Valley. Always 78, never computed from the current year. Real business name is "Malugani's Tire Shop" (the landing page's own logo and nav), not "Tire Center".
 5. Headline is "Practical tools to remove the friction in your business." with the hand-drawn underline on "friction". Statement, no question mark.
 
 ## Design system
@@ -30,7 +30,7 @@ Portfolio site for Justin Kuzmanich showcasing AI-built tools. One `index.html` 
 - Canonical URL is `https://kuzmanich.com/` (set in the canonical link, OG tags, JSON-LD, robots.txt, and sitemap.xml). The GitHub Pages staging copy canonicalizes to it, which keeps staging out of search results.
 - The project rows are baked into `index.html` as static markup between the `PROJECTS:STATIC` comment markers inside `#rows`, so crawlers that do not run JavaScript (GPTBot, ClaudeBot, PerplexityBot) can read the portfolio. The browser JS re-renders the same rows from the `PROJECTS` array at runtime, so the visible site never depends on the static block.
 - **After any edit to the `PROJECTS` array, run `node scripts/render-projects.mjs`** to regenerate the static block. If you forget, the site still looks right; only the crawler-visible copy goes stale.
-- JSON-LD in the head: WebSite, Person (Justin), and an ItemList of the six projects. Keep its descriptions consistent with the on-page copy and the CheckMate honesty framing (rule 3 above). Update it when projects change.
+- JSON-LD in the head: WebSite, Person (Justin), and an ItemList of all projects (currently eight). Keep its descriptions consistent with the on-page copy and the CheckMate honesty framing (rule 3 above). Update it when projects change.
 - Social card is `images/og-card.jpg` (1200x630, hero shot on paper). Favicon is `images/favicon.svg` plus `images/apple-touch-icon.png` (forest K with clay dot).
 
 ## Editing projects
@@ -42,12 +42,17 @@ Everything lives in the `PROJECTS` array near the bottom of `index.html`. One ob
 - `tools`: array of short tag strings
 - `image`: relative path like `images/name.webp`, or `""` for the styled placeholder panel
 - `live`: URL for the primary button, `""` shows "Link pending"
-- `label`: optional button text override (CheckMate uses "View patent")
-- `repo`: GitHub URL or `""`
+- `label`: optional button text override (CheckMate uses "View patent", Malugani uses "View landing page")
+- `repo`: GitHub URL, a second live URL, or `""`
+- `repoLabel`: optional button text override for the `repo` button, default "View code" (Malugani uses "View dashboard" since its second link is not a code repo)
 
-Current order: CheckMate (01, Acquired, opens the page as the origin story), TableOps, Blu Sky Pipeline, Scoop Alert, AI B-Roll Editor, Listing Website Builder, $ANSEM Dashboard. Hero copy says "Seven of them, below." Update that count if projects are added or removed.
+Current order: Malugani's Tire Shop (01, Live, a marketing case study), CheckMate (02, Acquired), TableOps, Blu Sky Pipeline, Scoop Alert, AI B-Roll Editor, Listing Website Builder, $ANSEM Dashboard. Hero copy says "Eight of them, below." Update that count if projects are added or removed.
 
-$ANSEM Dashboard is a live market tracker for a Solana meme coin, a different category from the other six business tools. Copy is deliberately written as a utility (price and holder tracking, a private P&L calculator, a news digest for newcomers) with no buy link, price hype, or promotional language, since this portfolio is read by potential employers and clients. Keep that restraint if this entry is ever edited.
+CheckMate's copy still reads "The origin story" (its `type` field) and "The same approach behind every tool below" (its `build` text), both written when it opened the page at position 01. It now sits at 02, behind Malugani. Justin asked for Malugani at 01 explicitly, overriding the prior design intent; CheckMate's own copy was intentionally left unchanged since it has strict honesty framing rules (rule 3 above) and nobody asked for a rewrite. Flag this to Justin if a true rewrite of that phrasing is ever wanted; don't change it unprompted.
+
+$ANSEM Dashboard is a live market tracker for a Solana meme coin, a different category from the other business tools. Copy is deliberately written as a utility (price and holder tracking, a private P&L calculator, a news digest for newcomers) with no buy link, price hype, or promotional language, since this portfolio is read by potential employers and clients. Keep that restraint if this entry is ever edited.
+
+Malugani's Tire Shop is the studio's first paid marketing client case study (as opposed to an internal tool or a personal project), covering both deliverables built for the Winter Rebates campaign: the landing page (malaganistireshopdeals.com) and a live performance dashboard (malaganistireshopdeals.com/dashboard/) that syncs Facebook Ads Manager spend/click data and Google Analytics (GA4) call/lead data through Google Sheets, refreshed daily. Both links are real production URLs, not a repo; there is no public code repository for this client project.
 
 ## Product shot treatment
 
@@ -56,6 +61,7 @@ All screenshots are pre-composited before embedding, on a `#FBF8F1` cream canvas
 - **Web apps**: wrapped in a mac-style browser window. Chrome bar `#ECE6DA`, three traffic-light dots, URL pill `#F7F3EB` with the real URL in mono type.
 - **Mobile apps** (TableOps): device screenshots side by side as a paired phone shot.
 - **Desktop apps / photos** (Resolve, CheckMate device): no browser chrome, just the rounded panel with shadow. Photos get ~1.5% edge trim to remove video-player corner artifacts.
+- **Two linked web deliverables** (Malugani's Tire Shop): two mac-style browser windows side by side in one image, each with its own chrome bar and URL pill, sharing one cream canvas and drop shadow. Used when a project is genuinely two URLs (a landing page and a dashboard), not just one screenshot. When the source screenshot is a raw OS/browser capture (real tab bar, address bar, extensions), crop that off first by finding the pixel row where the real page's own background begins, then wrap the trimmed page in the site's own synthetic chrome. Also trim any native drop shadow or body margin the source page renders around its own content (scan for the hard edge where the page's real background color starts) so it does not create a mismatched halo against the site's cream canvas.
 
 To add a shot: composite with PIL following the above, export as WebP quality ~82 (method 6) into `images/` with a kebab-case name matching the project, set the relative path as the project's `image` value. Hero image (Pipeline crop, 1660x712 source crop) uses the same browser treatment on the `#F1ECE1` paper color so it blends with the hero background and lives at `images/hero-pipeline.webp`.
 
