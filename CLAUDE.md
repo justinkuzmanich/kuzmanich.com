@@ -52,7 +52,7 @@ CheckMate's copy still reads "The origin story" (its `type` field) and "The same
 
 $ANSEM Dashboard is a live market tracker for a Solana meme coin, a different category from the other business tools. Copy is deliberately written as a utility (price and holder tracking, a private P&L calculator, a news digest for newcomers) with no buy link, price hype, or promotional language, since this portfolio is read by potential employers and clients. Keep that restraint if this entry is ever edited.
 
-Malugani's Tire Shop is the studio's first paid marketing client case study (as opposed to an internal tool or a personal project), covering both deliverables built for the Winter Rebates campaign: the landing page (malaganistireshopdeals.com) and a live performance dashboard (malaganistireshopdeals.com/dashboard/) that syncs Facebook Ads Manager spend/click data and Google Analytics (GA4) call/lead data through Google Sheets, refreshed daily. Both links are real production URLs, not a repo; there is no public code repository for this client project.
+Malugani's Tire Shop is the studio's first paid marketing client case study (as opposed to an internal tool or a personal project), covering both deliverables built for the Winter Rebates campaign: the landing page (maluganistireshopdeals.com) and a live performance dashboard (maluganistireshopdeals.com/dashboard/) that syncs Facebook Ads Manager spend/click data and Google Analytics (GA4) call/lead data through Google Sheets, refreshed daily. Both links are real production URLs, not a repo; there is no public code repository for this client project.
 
 ## Product shot treatment
 
